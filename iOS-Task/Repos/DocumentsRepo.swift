@@ -12,12 +12,6 @@ protocol DocumentsRepo {
 }
 
 class DocumentsRepoImpl: DocumentsRepo {
-//    var apiManager: APIManager
-
-//    init(_ apiManager: APIManager = APIManagerImp()) {
-//        self.apiManager = apiManager
-//    }
-
     func searchDocuments(searchKeyWord: String, completionHandler: @escaping (Result<DocumentsParentEntity,NetworkError>)->Void) {
         URLSession.shared.load(DocumentResources.searchDocuments(keyword: searchKeyWord)) {response in
                 switch response {
